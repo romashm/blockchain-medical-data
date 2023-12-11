@@ -1,0 +1,57 @@
+{% load static %}
+<div class="authincation">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100 align-items-center">
+            <div class="col-xl-5 col-md-6">
+                <div class="mini-logo text-center my-4">
+                    <a href="./index.html"><img src="./images/logo.png" alt="" /></a>
+                    <h4 class="card-title mt-5">Создайте свой блокчейн</h4>
+                </div>
+                <div class="auth-form card">
+                    <div class="card-body">
+                        {% csrf_token %}
+                        <form name="myform" class="signin_validate row g-3" method="POST">
+                            <div class="input-group col-12">
+                                <input type="text" class="form-control" placeholder="Ваше имя" name="from" />
+                                <input type="text" class="form-control" placeholder="Ваша фамилия" name="to" />
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="РОСТ" aria-label="Username" name="Height">
+                                <input type="text" class="form-control" placeholder="ВЕС" aria-label="Username" name="Weight">
+                                <input type="text" class="form-control" placeholder="ВОЗРАСТ" aria-label="Username" name="Age">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Пульс" name="amount" />
+                                <input type="text" class="form-control" placeholder="Давление" name="pressure" />
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Температура тела" name="Body" />
+                            </div>
+                            <div class="col-12">
+                                <label for="customRange1" class="form-label">Кислорода в крови</label>
+                                <input type="range" class="form-range" id="customRange1" name="Oxygen">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Глюкоза в Крови" name="Blood" />
+                            </div>
+                            <div class="col-12">
+                                <select class="form-select form-select-sm" aria-label="Small select example" name="Rate"> 
+                                    <option selected>Частота дыхания в минуту</option>
+                                    <option value="От 16 до 20">От 16 до 20</option>
+                                    <option value="Меньше 16">Меньше 16</option>
+                                    <option value="Больше 20">Больше 20 </option>
+                                  </select>
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    Создать
+                       </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
